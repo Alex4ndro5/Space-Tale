@@ -43,17 +43,17 @@ class Platformer(arcade.Window):
         #Level number
         self.level = 1
 
-        #Sounds
-        self.coin_sound = arcade.load_sound(
-            str(ASSETS_PATH / "sounds" / "coin.wav")
-        )
-        self.jump_sound = arcade.load_sound(
-            str(ASSETS_PATH / "sounds" / "jump.wav")
-        )
-        self.victory_sound = arcade.load_sound(
-
-            str(ASSETS_PATH / "sounds" / "victory.wav")
-        )
+        # #Sounds
+        # self.coin_sound = arcade.load_sound(
+        #     str(ASSETS_PATH / "sounds" / "coin.mp3")
+        # )
+        # self.jump_sound = arcade.load_sound(
+        #     str(ASSETS_PATH / "sounds" / "jump.mp3")
+        # )
+        # self.victory_sound = arcade.load_sound(
+        #
+        #     str(ASSETS_PATH / "sounds" / "victory.mp3")
+        # )
     def setup(self) -> None:
         map_name = f"platform_level_{self.level:02}.tmx"
         map_path = ASSETS_PATH / map_name
@@ -66,7 +66,7 @@ class Platformer(arcade.Window):
         ladders_layer = "ladders"
 
         #load map
-        game_map = arcade.tilemap.read_tmx(str(map_path))
+        self.til
 
         #load layers
         self.background = arcade.tilemap.proccess_layer(
@@ -186,7 +186,6 @@ if __name__ == "__main__":
     window = Platformer()
     window.setup()
     arcade.run()
-#nigga
 
 
 
