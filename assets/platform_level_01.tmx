@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.8" tiledversion="1.8.2" orientation="orthogonal" renderorder="right-down" width="25" height="20" tilewidth="128" tileheight="128" infinite="0" nextlayerid="7" nextobjectid="9">
+ <tileset firstgid="1" source="Dark_tale.tsx"/>
+ <tileset firstgid="54" source="../../../PycharmProjects/Dark Tale/assets/Dark_tale.tsx"/>
+ <objectgroup id="3" name="coins">
+  <object id="5" gid="78" x="1290.69" y="2092.38" width="128" height="128"/>
+  <object id="6" gid="78" x="1656.82" y="2077.73" width="128" height="128"/>
+  <object id="7" gid="77" x="382.682" y="2304.73" width="128" height="128"/>
+  <object id="8" gid="77" x="770.783" y="2187.57" width="128" height="128"/>
+ </objectgroup>
+ <layer id="1" name="ground" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMAowgQsQ6+LB1DBfH4h18GBS3OlMhvk6DPj9CMMwc/RwiA8GDABUng5a
+  </data>
+ </layer>
+ <layer id="5" name="background" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMFSBFhJbAYsYJYAfiAXxYGqYzwnETHgwCCgh6dHCwoa5kw+LOCHzmfD4DxnDzOHAIT4YMACoxQND
+  </data>
+ </layer>
+ <layer id="6" name="ladders" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGwVAHAAfQAAE=
+  </data>
+ </layer>
+ <layer id="4" name="goal" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRQEugSQc7NOhgxygY3AAAuxgAUg==
+  </data>
+ </layer>
+</map>
