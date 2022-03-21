@@ -2,11 +2,13 @@
 Platformer Game
 """
 import arcade
+from pathlib import Path
 
 # Constants
 SCREEN_WIDTH = 1000
 SCREEN_HEIGHT = 650
 SCREEN_TITLE = "Dark Tale"
+ASSETS_PATH = Path(__file__).absolute().parent / "assets"
 
 # Constants used to scale our sprites from their original size
 CHARACTER_SCALING = 1
@@ -53,8 +55,8 @@ class MyGame(arcade.Window):
         self.score = 0
 
         # Load sounds
-        self.collect_coin_sound = arcade.load_sound(":resources:sounds/coin1.wav")
-        self.jump_sound = arcade.load_sound(":resources:sounds/jump1.wav")
+        self.collect_coin_sound = arcade.load_sound(ASSETS_PATH / "sounds" / "coin.mp3")
+        self.jump_sound = arcade.load_sound(ASSETS_PATH / "sounds" / "jump.mp3")
 
         arcade.set_background_color(arcade.csscolor.AQUA)
 
@@ -66,13 +68,13 @@ class MyGame(arcade.Window):
         self.gui_camera = arcade.Camera(self.width, self.height)
 
         # Name of map file to load
-        map_name = ":resources:tiled_maps/map.json"
+        map_name = ASSETS_PATH / "tiled" / "platform_level_01.json"
 
         # Layer specific options are defined based on Layer names in a dictionary
         # Doing this will make the SpriteList for the platforms layer
         # use spatial hashing for detection.
         layer_options = {
-            "Platforms": {
+            "ground": {
                 "use_spatial_hash": True,
             },
         }
@@ -88,7 +90,7 @@ class MyGame(arcade.Window):
         self.score = 0
 
         # Set up the player, specifically placing it at these coordinates.
-        image_source = ":resources:images/animated_characters/zombie/zombie_idle.png"
+        image_source = ASSETS_PATH / "images" / "player" / "alienGreen_stand.png"
         self.player_sprite = arcade.Sprite(image_source, CHARACTER_SCALING)
         self.player_sprite.center_x = 128
         self.player_sprite.center_y = 128
@@ -101,7 +103,7 @@ class MyGame(arcade.Window):
 
         # Create the 'physics engine'
         self.physics_engine = arcade.PhysicsEnginePlatformer(
-            self.player_sprite, gravity_constant=GRAVITY, walls=self.scene["Platforms"]
+            self.player_sprite, gravity_constant=GRAVITY, walls=self.scene["ground"]
         )
 
     def on_draw(self):
@@ -170,7 +172,7 @@ class MyGame(arcade.Window):
 
         # See if we hit any coins
         coin_hit_list = arcade.check_for_collision_with_list(
-            self.player_sprite, self.scene["Coins"]
+            self.player_sprite, self.scene["coins"]
         )
 
         # Loop through each coin we hit (if any) and remove it

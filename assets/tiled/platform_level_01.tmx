@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.8" tiledversion="1.8.2" orientation="orthogonal" renderorder="right-down" width="25" height="20" tilewidth="128" tileheight="128" infinite="0" nextlayerid="8" nextobjectid="13">
+ <editorsettings>
+  <export target="platform_level_01.json" format="json"/>
+ </editorsettings>
+ <tileset firstgid="1" source="Dark_tale.tsx"/>
+ <objectgroup id="3" name="coins">
+  <properties>
+   <property name="point_value" type="int" value="10"/>
+  </properties>
+  <object id="9" gid="179" x="1269.33" y="2045.82" width="128" height="128">
+   <properties>
+    <property name="point_value" type="int" value="30"/>
+   </properties>
+  </object>
+  <object id="10" gid="179" x="1663.27" y="1942.79" width="128" height="128">
+   <properties>
+    <property name="point_value" type="int" value="30"/>
+   </properties>
+  </object>
+  <object id="11" gid="175" x="642.061" y="2164" width="128" height="128">
+   <properties>
+    <property name="point_value" type="int" value="10"/>
+   </properties>
+  </object>
+  <object id="12" gid="175" x="2563.27" y="1654.91" width="128" height="128"/>
+ </objectgroup>
+ <layer id="5" name="background" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRQAvQQqTYUAa4/DPc/DkUAAANPAIR
+  </data>
+ </layer>
+ <layer id="7" name="ground" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMNSACxC74cHUMN8OiM3xYFLc6UyG+eYM+P0IwzBzbJHsIdZ8crAtmr2DBQMA3HsX7w==
+  </data>
+ </layer>
+ <layer id="6" name="ladders" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGwVAHAAfQAAE=
+  </data>
+ </layer>
+ <layer id="4" name="goal" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIKRDYroYEchHewYBSMbAABTIgDk
+  </data>
+ </layer>
+</map>
