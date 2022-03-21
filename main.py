@@ -186,7 +186,7 @@ if __name__ == "__main__":
     window = Platformer()
     window.setup()
     arcade.run()
-
+#nigga
 
 
 
