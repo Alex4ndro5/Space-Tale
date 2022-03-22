@@ -180,7 +180,7 @@ class MyGame(arcade.Window):
             self.victory_sound.play()
 
             # Set up the next level
-            #self.level += 1
+            # self.level += 1
             self.setup()
 
         # Sees if we hit any coins
@@ -209,7 +209,6 @@ class MyGame(arcade.Window):
 
         if self.player_sprite.right >= self.end_of_map:
             self.player_sprite.right = self.end_of_map
-
 
 
 def main():
