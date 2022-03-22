@@ -54,9 +54,13 @@ class MyGame(arcade.Window):
         # Keep track of the score
         self.score = 0
 
+        # Edge of the map
+        self.end_of_map = 0
+
         # Load sounds
         self.collect_coin_sound = arcade.load_sound(ASSETS_PATH / "sounds" / "coin.mp3")
         self.jump_sound = arcade.load_sound(ASSETS_PATH / "sounds" / "jump.mp3")
+        self.victory_sound = arcade.load_sound(ASSETS_PATH / "sounds" / "victory.mp3")
 
         arcade.set_background_color(arcade.csscolor.AQUA)
 
@@ -89,8 +93,8 @@ class MyGame(arcade.Window):
         self.score = 0
 
         # Sets up the player, specifically placing it at these coordinates.
-        image_source = ASSETS_PATH / "images" / "player" / "alienGreen_stand.png"
-        self.player_sprite = arcade.Sprite(image_source, CHARACTER_SCALING)
+        image_source = ASSETS_PATH / "images" / "player"
+        self.player_sprite = arcade.Sprite(image_source / "alienGreen_stand.png", CHARACTER_SCALING)
         self.player_sprite.center_x = 128
         self.player_sprite.center_y = 128
         self.scene.add_sprite("Player", self.player_sprite)
@@ -132,7 +136,7 @@ class MyGame(arcade.Window):
     def on_key_press(self, key, modifiers):
         """Called whenever a key is pressed."""
 
-        if key == arcade.key.UP or key == arcade.key.W:
+        if key == arcade.key.SPACE:
             if self.physics_engine.can_jump():
                 self.player_sprite.change_y = PLAYER_JUMP_SPEED
                 arcade.play_sound(self.jump_sound)
@@ -168,6 +172,17 @@ class MyGame(arcade.Window):
         # Moves the player with the physics engine
         self.physics_engine.update()
 
+        goals_hit = arcade.check_for_collision_with_list(
+            sprite=self.player_sprite, sprite_list=self.scene["goal"]
+        )
+        if goals_hit:
+            # Play the victory sound
+            self.victory_sound.play()
+
+            # Set up the next level
+            #self.level += 1
+            self.setup()
+
         # Sees if we hit any coins
         coin_hit_list = arcade.check_for_collision_with_list(
             self.player_sprite, self.scene["coins"]
@@ -180,10 +195,21 @@ class MyGame(arcade.Window):
             # Plays a sound
             arcade.play_sound(self.collect_coin_sound)
             # Adds one to the score
-            self.score += 1
+            self.score += int(coin.properties["point_value"])
 
         # Positions the camera
         self.center_camera_to_player()
+
+        # Calculate the right edge of the map in pixels
+        self.end_of_map = self.tile_map.width * GRID_PIXEL_SIZE
+
+        # Stops player form leaving map
+        if self.player_sprite.left < 0:
+            self.player_sprite.left = 0
+
+        if self.player_sprite.right >= self.end_of_map:
+            self.player_sprite.right = self.end_of_map
+
 
 
 def main():
