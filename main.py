@@ -7,7 +7,7 @@ from pathlib import Path
 # Constants
 SCREEN_WIDTH = 1000
 SCREEN_HEIGHT = 650
-SCREEN_TITLE = "Dark Tale"
+SCREEN_TITLE = "Space Tale"
 ASSETS_PATH = Path(__file__).absolute().parent / "assets"
 
 # Constants used to scale sprites
@@ -21,6 +21,19 @@ GRID_PIXEL_SIZE = SPRITE_PIXEL_SIZE * TILE_SCALING
 PLAYER_MOVEMENT_SPEED = 10
 GRAVITY = 1
 PLAYER_JUMP_SPEED = 20
+
+# Player starting position
+PLAYER_START_X = 64
+PLAYER_START_Y = 225
+
+# Layer Names from our TileMap
+LAYER_NAME_PLATFORMS = "Platforms"
+LAYER_NAME_COINS = "Coins"
+LAYER_NAME_FOREGROUND = "Foreground"
+LAYER_NAME_BACKGROUND = "Background"
+LAYER_NAME_DONT_TOUCH = "Don't Touch"
+LAYER_NAME_GOALS = "Goal"
+LAYER_NAME_LADDERS = "Ladders"
 
 
 class MyGame(arcade.Window):
@@ -54,6 +67,9 @@ class MyGame(arcade.Window):
         # Keep track of the score
         self.score = 0
 
+        # Keep track of level
+        self.level = 1
+
         # Edge of the map
         self.end_of_map = 0
 
@@ -72,12 +88,12 @@ class MyGame(arcade.Window):
         self.gui_camera = arcade.Camera(self.width, self.height)
 
         # Name of map file to load
-        map_name = ASSETS_PATH / "tiled" / "platform_level_01.json"
+        map_name = ASSETS_PATH / "tiled" / f"platform_level_{self.level}.json"
 
         # This will make the SpriteList for the platforms layer
         # Spatial hashing for detection.
         layer_options = {
-            "ground": {
+            LAYER_NAME_PLATFORMS: {
                 "use_spatial_hash": True,
             },
         }
@@ -105,7 +121,7 @@ class MyGame(arcade.Window):
 
         # Creates the 'physics engine'
         self.physics_engine = arcade.PhysicsEnginePlatformer(
-            self.player_sprite, gravity_constant=GRAVITY, walls=self.scene["ground"]
+            self.player_sprite, gravity_constant=GRAVITY, walls=self.scene[LAYER_NAME_PLATFORMS]
         )
 
     def on_draw(self):
@@ -173,19 +189,19 @@ class MyGame(arcade.Window):
         self.physics_engine.update()
 
         goals_hit = arcade.check_for_collision_with_list(
-            sprite=self.player_sprite, sprite_list=self.scene["goal"]
+            sprite=self.player_sprite, sprite_list=self.scene[LAYER_NAME_GOALS]
         )
         if goals_hit:
             # Play the victory sound
             self.victory_sound.play()
 
             # Set up the next level
-            # self.level += 1
+            self.level += 1
             self.setup()
 
         # Sees if we hit any coins
         coin_hit_list = arcade.check_for_collision_with_list(
-            self.player_sprite, self.scene["coins"]
+            self.player_sprite, self.scene[LAYER_NAME_COINS]
         )
 
         # Loops through each coin we hit (if any) and removes it

@@ -1,10 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.2" orientation="orthogonal" renderorder="right-down" width="25" height="20" tilewidth="128" tileheight="128" infinite="0" nextlayerid="8" nextobjectid="13">
+<map version="1.8" tiledversion="1.8.2" orientation="orthogonal" renderorder="right-down" width="25" height="20" tilewidth="128" tileheight="128" infinite="0" nextlayerid="10" nextobjectid="13">
  <editorsettings>
   <export target="platform_level_01.json" format="json"/>
  </editorsettings>
  <tileset firstgid="1" source="Dark_tale.tsx"/>
- <objectgroup id="3" name="coins">
+ <layer id="5" name="Background" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRQAvQQqTYUAa4/DPc/DkUAAANPAIR
+  </data>
+ </layer>
+ <layer id="6" name="Ladders" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGwVAHAAfQAAE=
+  </data>
+ </layer>
+ <layer id="8" name="Foreground" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGwVAHAAfQAAE=
+  </data>
+ </layer>
+ <layer id="9" name="Don't Touch" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGwVAHAAfQAAE=
+  </data>
+ </layer>
+ <layer id="7" name="Platforms" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMNSACxC74cHUMN8OiM3xYFLc6UyG+eYM+P0IwzBzbJHsIdZ8crAtmr2DBQMA3HsX7w==
+  </data>
+ </layer>
+ <layer id="4" name="Goal" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIKRDYroYEchHewYBSMbAABTIgDk
+  </data>
+ </layer>
+ <objectgroup id="3" name="Coins">
   <properties>
    <property name="point_value" type="int" value="10"/>
   </properties>
@@ -29,24 +59,4 @@
    </properties>
   </object>
  </objectgroup>
- <layer id="5" name="background" width="25" height="20">
-  <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjIJRQAvQQqTYUAa4/DPc/DkUAAANPAIR
-  </data>
- </layer>
- <layer id="7" name="ground" width="25" height="20">
-  <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjIJRMNSACxC74cHUMN8OiM3xYFLc6UyG+eYM+P0IwzBzbJHsIdZ8crAtmr2DBQMA3HsX7w==
-  </data>
- </layer>
- <layer id="6" name="ladders" width="25" height="20">
-  <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjIJRMApGwVAHAAfQAAE=
-  </data>
- </layer>
- <layer id="4" name="goal" width="25" height="20">
-  <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjIKRDYroYEchHewYBSMbAABTIgDk
-  </data>
- </layer>
 </map>
