@@ -199,6 +199,19 @@ class MyGame(arcade.Window):
         goals_hit = arcade.check_for_collision_with_list(
             sprite=self.player_sprite, sprite_list=self.scene[LAYER_NAME_GOALS]
         )
+        # Fall out of map protection
+        if self.player_sprite.center_y < -100:
+            self.player_sprite.center_x = PLAYER_START_X
+            self.player_sprite.center_y = PLAYER_START_Y
+
+        # Player collision with trap/enemy
+        if arcade.check_for_collision_with_list(
+                self.player_sprite, self.scene[LAYER_NAME_DONT_TOUCH]
+        ):
+            self.player_sprite.change_x = 0
+            self.player_sprite.change_y = 0
+            self.player_sprite.center_x = PLAYER_START_X
+            self.player_sprite.center_y = PLAYER_START_Y
         if goals_hit:
             # Play the victory sound
             self.victory_sound.play()
