@@ -90,10 +90,15 @@ class MyGame(arcade.Window):
         # Name of map file to load
         map_name = ASSETS_PATH / "tiled" / f"platform_level_{self.level}.json"
 
-        # This will make the SpriteList for the platforms layer
-        # Spatial hashing for detection.
+        # Layer Specific Options for the Tilemap
         layer_options = {
             LAYER_NAME_PLATFORMS: {
+                "use_spatial_hash": True,
+            },
+            LAYER_NAME_COINS: {
+                "use_spatial_hash": True,
+            },
+            LAYER_NAME_DONT_TOUCH: {
                 "use_spatial_hash": True,
             },
         }
@@ -108,11 +113,14 @@ class MyGame(arcade.Window):
         # Keep track of the score
         self.score = 0
 
+        # Makes foreground appear before player
+        self.scene.add_sprite_list_after("Player", LAYER_NAME_FOREGROUND)
+
         # Sets up the player, specifically placing it at these coordinates.
         image_source = ASSETS_PATH / "images" / "player"
         self.player_sprite = arcade.Sprite(image_source / "alienGreen_stand.png", CHARACTER_SCALING)
-        self.player_sprite.center_x = 128
-        self.player_sprite.center_y = 128
+        self.player_sprite.center_x = PLAYER_START_X
+        self.player_sprite.center_y = PLAYER_START_Y
         self.scene.add_sprite("Player", self.player_sprite)
 
         # Sets the background color
