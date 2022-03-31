@@ -21,7 +21,7 @@ GRID_PIXEL_SIZE = SPRITE_PIXEL_SIZE * TILE_SCALING
 # Movement speed of player, in pixels per frame
 PLAYER_MOVEMENT_SPEED = 7
 GRAVITY = 1.15
-PLAYER_JUMP_SPEED = 20
+PLAYER_JUMP_SPEED = 25
 
 # Constants used to track if the player is facing left or right
 RIGHT_FACING = 0
