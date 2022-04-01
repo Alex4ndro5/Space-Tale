@@ -20,8 +20,8 @@ GRID_PIXEL_SIZE = SPRITE_PIXEL_SIZE * TILE_SCALING
 
 # Movement speed of player, in pixels per frame
 PLAYER_MOVEMENT_SPEED = 7
-GRAVITY = 1.15
-PLAYER_JUMP_SPEED = 25
+GRAVITY = 1
+PLAYER_JUMP_SPEED = 20
 
 # Constants used to track if the player is facing left or right
 RIGHT_FACING = 0
@@ -241,6 +241,7 @@ class MyGame(arcade.Window):
         self.physics_engine = arcade.PhysicsEnginePlatformer(
             self.player_sprite,
             gravity_constant=GRAVITY,
+            ladders=self.scene[LAYER_NAME_LADDERS],
             walls=self.scene[LAYER_NAME_PLATFORMS]
         )
 
