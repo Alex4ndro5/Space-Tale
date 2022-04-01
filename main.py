@@ -307,7 +307,7 @@ class MyGame(arcade.Window):
     def on_key_press(self, key, modifiers):
         """Called whenever a key is pressed."""
 
-        if key == arcade.key.UP or key == arcade.key.W:
+        if key == arcade.key.UP or key == arcade.key.W or key == arcade.key.SPACE:
             self.up_pressed = True
         elif key == arcade.key.DOWN or key == arcade.key.S:
             self.down_pressed = True
@@ -321,7 +321,7 @@ class MyGame(arcade.Window):
     def on_key_release(self, key, modifiers):
         """Called when the user releases a key."""
 
-        if key == arcade.key.UP or key == arcade.key.W:
+        if key == arcade.key.UP or key == arcade.key.W or key == arcade.key.SPACE:
             self.up_pressed = False
             self.jump_needs_reset = False
         elif key == arcade.key.DOWN or key == arcade.key.S:
