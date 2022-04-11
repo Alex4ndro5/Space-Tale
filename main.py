@@ -28,7 +28,7 @@ RIGHT_FACING = 0
 LEFT_FACING = 1
 
 # Player starting position
-PLAYER_START_X = 64
+PLAYER_START_X = 164
 PLAYER_START_Y = 225
 
 # Layer Names from our TileMap
@@ -184,6 +184,9 @@ class MyGame(arcade.Window):
         # Edge of the map
         self.end_of_map = 0
 
+        # Keep track of the score
+        self.score = 0
+
         # Load sounds
         self.collect_coin_sound = arcade.load_sound(ASSETS_PATH / "sounds" / "coin.mp3")
         self.jump_sound = arcade.load_sound(ASSETS_PATH / "sounds" / "jump.mp3")
@@ -221,8 +224,6 @@ class MyGame(arcade.Window):
         # from the map as SpriteLists in the scene in the proper order.
         self.scene = arcade.Scene.from_tilemap(self.tile_map)
 
-        # Keep track of the score
-        self.score = 0
 
         # Makes foreground appear before player
         self.scene.add_sprite_list_after(LAYER_NAME_PLAYER, LAYER_NAME_FOREGROUND)
@@ -316,6 +317,9 @@ class MyGame(arcade.Window):
         elif key == arcade.key.RIGHT or key == arcade.key.D:
             self.right_pressed = True
 
+        if key == arcade.key.ESCAPE:
+            arcade.exit()
+
         self.process_keychange()
 
     def on_key_release(self, key, modifiers):
@@ -391,7 +395,13 @@ class MyGame(arcade.Window):
 
             # Set up the next level
             self.level += 1
-            self.setup()
+
+            # End game
+            if self.level == 5:
+                arcade.exit()
+                print("Twój wynik", self.scoredd)
+            else:
+                self.setup()
 
         # Sees if we hit any coins
         coin_hit_list = arcade.check_for_collision_with_list(

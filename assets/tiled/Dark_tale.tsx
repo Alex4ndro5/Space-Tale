@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.8" tiledversion="1.8.2" name="Dark_tale" tilewidth="128" tileheight="256" tilecount="141" columns="0">
+<tileset version="1.8" tiledversion="1.8.2" name="Dark_tale" tilewidth="128" tileheight="256" tilecount="149" columns="0">
  <grid orientation="orthogonal" width="1" height="1"/>
  <tile id="53">
   <image width="128" height="128" source="../images/ground/Planet/planet.png"/>
@@ -423,5 +423,29 @@
  </tile>
  <tile id="193">
   <image width="128" height="128" source="../images/HUD/hudX.png"/>
+ </tile>
+ <tile id="201">
+  <image width="128" height="128" source="../images/HUD/keyboard.png"/>
+ </tile>
+ <tile id="202">
+  <image width="128" height="128" source="../images/HUD/A.png"/>
+ </tile>
+ <tile id="203">
+  <image width="128" height="128" source="../images/HUD/D.png"/>
+ </tile>
+ <tile id="204">
+  <image width="128" height="128" source="../images/HUD/S.png"/>
+ </tile>
+ <tile id="208">
+  <image width="128" height="128" source="../images/HUD/W.png"/>
+ </tile>
+ <tile id="209">
+  <image width="128" height="128" source="../images/HUD/SPACE_L.png"/>
+ </tile>
+ <tile id="210">
+  <image width="128" height="128" source="../images/HUD/SPACE_M.png"/>
+ </tile>
+ <tile id="211">
+  <image width="128" height="128" source="../images/HUD/SPACE_R.png"/>
  </tile>
 </tileset>
