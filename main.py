@@ -7,7 +7,7 @@ from pathlib import Path
 # Constants
 SCREEN_WIDTH = 1000
 SCREEN_HEIGHT = 650
-SCREEN_TITLE = "Space Tale"
+SCREEN_TITLE = "Space Tale by Aleksander Folfas"
 ASSETS_PATH = Path(__file__).absolute().parent / "assets"
 player_image_source = ASSETS_PATH / "images" / "player"
 

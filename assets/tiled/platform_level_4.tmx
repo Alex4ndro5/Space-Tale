@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.8" tiledversion="1.8.2" orientation="orthogonal" renderorder="right-down" width="26" height="20" tilewidth="128" tileheight="128" infinite="0" nextlayerid="10" nextobjectid="14">
+ <editorsettings>
+  <export target="platform_level_01.json" format="json"/>
+ </editorsettings>
+ <tileset firstgid="1" source="Dark_tale.tsx"/>
+ <layer id="5" name="Background" width="26" height="20">
+  <data encoding="base64" compression="zlib">
+   eJztkcEKACAMQvfx7bv2a106hcrw7IMo1qZSVSEElwHn+ZbqU/1bHaTFfFT+f37jw/xUbpZp80ZsFmk42ZW3+p/gc97epF7gvkkfqwePC0C2NuE=
+  </data>
+ </layer>
+ <layer id="6" name="Ladders" width="26" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGwShABQAIIAAB
+  </data>
+ </layer>
+ <layer id="8" name="Foreground" width="26" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGwShABQAIIAAB
+  </data>
+ </layer>
+ <layer id="9" name="Don't Touch" width="26" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGwShABQAIIAAB
+  </data>
+ </layer>
+ <layer id="7" name="Platforms" width="26" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMAqGL3CjEzYfZhgA76USSQ==
+  </data>
+ </layer>
+ <layer id="4" name="Goal" width="26" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApoD4roYEc7EBfSwZ6RAAAIegFr
+  </data>
+ </layer>
+ <objectgroup id="3" name="Coins">
+  <properties>
+   <property name="point_value" type="int" value="10"/>
+  </properties>
+  <object id="13" gid="55" x="3199.66" y="2561.79" width="128" height="128"/>
+ </objectgroup>
+</map>
