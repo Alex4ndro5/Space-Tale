@@ -399,7 +399,7 @@ class MyGame(arcade.Window):
             # End game
             if self.level == 5:
                 arcade.exit()
-                print("Twój wynik", self.scoredd)
+                print("Twój wynik", self.score)
             else:
                 self.setup()
 
