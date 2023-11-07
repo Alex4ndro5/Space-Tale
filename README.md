@@ -10,7 +10,7 @@
 - [Getting Started](#getting-started)
 - [Gameplay](#gameplay)
 - [Controls](#controls)
-- [Screenshots](#screenshots)
+- [Screenshots](#game-screenshots)
 - [Built With](#built-with)
 - [Acknowledgements](#acknowledgements)
 
@@ -41,7 +41,7 @@ SpaceTale is a classic platformer game where the player controls a character who
 - Climb Ladders: Up Arrow Key or W
 - Descend Ladders: Down Arrow Key or S
   
-## Game Screenshot
+## Game Screenshots
 [Soon]
 ## Built With
 - Python
