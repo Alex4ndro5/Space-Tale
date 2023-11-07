@@ -44,6 +44,6 @@ SpaceTale is a classic platformer game where the player controls a character who
 - Python
 - Arcade Library
 ## Acknowledgements
-Special thanks to Aleksander Folfas for creating this fun platformer game. The project is available on GitHub for learning and enjoyment.
+The project is available on GitHub for learning and enjoyment.
 
 Enjoy the game and have fun exploring SpaceTale!
