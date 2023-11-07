@@ -40,7 +40,7 @@ SpaceTale is a classic platformer game where the player controls a character who
 - Jump: Up Arrow Key, W, or Spacebar
 - Climb Ladders: Up Arrow Key or W
 - Descend Ladders: Down Arrow Key or S
-- Screenshots
+  
 ## Game Screenshot
 [Soon]
 ## Built With
